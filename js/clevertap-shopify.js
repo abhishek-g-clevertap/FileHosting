@@ -109,7 +109,7 @@ var profile_push_checkout = function() {
         if(Shopify.checkout.billing_address != null){
             clevertap.profile.push({
                 "Site": {
-                    "Name": Shopify.checkout.billing_address.first_name + " " + Shopify.checkout.billing_address.last_name ,
+//                    "Name": Shopify.checkout.billing_address.first_name + " " + Shopify.checkout.billing_address.last_name ,
                     "Email": Shopify.checkout.email,
                     "Phone": Shopify.checkout.phone
                 }
