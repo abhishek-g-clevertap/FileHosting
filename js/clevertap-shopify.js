@@ -89,7 +89,7 @@ var push_checkout = function(isWebhookEnabled) {
             "CT Source": "Shopify"
         };
 
-        if(isWebhookEnabled !== "undefined" && isWebhookEnabled!== "" && isWebhookEnabled){
+        if(isWebhookEnabled !== "undefined" && isWebhookEnabled !== "" && isWebhookEnabled == true){
             eventName="Charged SDK";
             delete eventData['Items'];
         }
@@ -109,7 +109,7 @@ var profile_push_checkout = function() {
         if(Shopify.checkout.billing_address != null){
             clevertap.profile.push({
                 "Site": {
-//                    "Name": Shopify.checkout.billing_address.first_name + " " + Shopify.checkout.billing_address.last_name ,
+                    // "Name":  Shopify.checkout.billing_address.first_name + " " + Shopify.checkout.billing_address.last_name ,
                     "Email": Shopify.checkout.email,
                     "Phone": Shopify.checkout.phone
                 }
@@ -151,7 +151,7 @@ function scriptLoad(scriptUrl, scriptLoadedCallback){
         };
     }
 
-    scriptElement.src = "https://abhishek-g-clevertap.github.io/js/shopifyEvents.js";
+    scriptElement.src = "https://abhishek-g-clevertap.github.io/js/shopifyEvent.js";
     document.getElementsByTagName('head')[0].appendChild(scriptElement);
 };
 

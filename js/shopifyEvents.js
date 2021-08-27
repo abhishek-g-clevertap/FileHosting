@@ -719,7 +719,7 @@
                 "CT Source": "Shopify"
             };
     
-            if(__wzrk_webhook_enabled !== "undefined" && __wzrk_webhook_enabled !== "" && __wzrk_webhook_enabled){
+            if(__wzrk_webhook_enabled !== "undefined" && __wzrk_webhook_enabled !== "" && __wzrk_webhook_enabled == "true"){
                 eventName="Charged SDK";
                 delete eventData['Items'];
             }
@@ -809,9 +809,10 @@
         });
 
         var eventName="Checkout";
-        if(__wzrk_webhook_enabled !== "undefined" && __wzrk_webhook_enabled !== "" && __wzrk_webhook_enabled){
+        if(__wzrk_webhook_enabled !== "undefined" && __wzrk_webhook_enabled !== "" && __wzrk_webhook_enabled == "true"){
                 eventName="Checkout SDK";
         }
+
         checkoutJson = {
             'Total Items': items.length,
             'Currency': cleverApp.config.currency,
