@@ -723,12 +723,10 @@
                 eventName="Charged SDK";
                 delete eventData['Items'];
             }
-            if(typeof shipping_address === "undefined"){
-                eventData.push({                
-                    "Ship_country": shipping_address.country,
-                    "Ship_region": shipping_address.province,
-                    "Ship_city": shipping_address.city
-                });
+            if(typeof shipping_address !== "undefined"){
+                eventData["Ship_country"]=shipping_address.country;                
+                eventData["Ship_region"]=shipping_address.province;                
+                eventData["Ship_city"]=shipping_address.city;                
             }
             clevertap.event.push(eventName, eventData);
         }
@@ -874,4 +872,3 @@
 
     })(onPageBrowse(), onUpdateCart(), setTimeout(buyItNowInit, 1500), eventHandler());
 })(window, window.document, window.clevertapApp);
-
