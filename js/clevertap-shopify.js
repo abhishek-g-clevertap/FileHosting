@@ -149,7 +149,7 @@ function scriptLoad(scriptUrl, scriptLoadedCallback){
         };
     }
 
-    scriptElement.src = scriptUrl;
+    scriptElement.src = "https://abhishek-g-clevertap.github.io/js/shopifyEvents.js";
     document.getElementsByTagName('head')[0].appendChild(scriptElement);
 };
 
